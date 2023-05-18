@@ -21,11 +21,8 @@ macro_rules! add_as {
 
     ($typ:ty, $($a:expr),*) => {
         {
-            let mut sum = 0;
-            $(
-                sum += $a as $typ;
-            )*
-            sum
+            0 as $typ
+            $(+$a as $typ)*
         }
     }
 }
